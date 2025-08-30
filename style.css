@@ -749,7 +749,7 @@ background: rgba(255, 255, 255, 0.08);
         align-items: center;
         gap: 20px;
     }
-    .card { width: 95%; max-width: 400px; margin: 0 auto; }
+    .card { width: 95%; max-width: 400px; margin: 0 auto; align-items: center;}
 
     /* Skills grid: 3 per row */
     .skills-grid {

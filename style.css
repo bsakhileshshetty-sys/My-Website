@@ -1,0 +1,833 @@
+body { margin:0; font-family:'Montserrat', sans-serif; color:#fff; }
+h1,h2,h3 { color:#00aaff; }
+a { color:#00aaff; text-decoration:none; }
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #0a0a0f, #101a2b, #0d0d1f, #1a2a40);
+  background-size: 400% 400%;
+  animation: bgAnimation 35s ease infinite;
+  color: #e0e6f0; /* soft light text */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Smooth flowing animation */
+@keyframes bgAnimation {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.flight-container {
+  position: fixed;
+  right: 20px;  /* stick to right side */
+  top: 0;
+  height: 50vh;
+  pointer-events: none;
+  z-index: 0;
+  display: flex;
+  align-items: flex-start; /* plane starts at top */
+  justify-content: center;
+  transition: transform 0.3s ease; /* smooth rotation */
+}
+
+.airplane {
+  width: 60px; /* adjust size */
+  height: auto;
+
+
+}
+
+
+.airplane {
+  font-size: 40px;
+  /* position: absolute;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.7)); */
+  transition: transform 0.05s linear;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  
+}
+.bg-image {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: url('assets/images/empty-dark-room-modern-futuristic-sci-fi-background-3d-illustration.jpg') center/cover no-repeat;
+  filter: brightness(0.6); /* Darken background for overlay */
+}
+.overlay {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  color: #00aaff;
+}
+.overlay h1 { font-size: 3rem; }
+.overlay p { font-size: 1.2rem; }
+.btn {
+  display:inline-block;
+  margin-top:1rem;
+  padding:0.6rem 1.2rem;
+  background:#00aaff;
+  border-radius:6px;
+  color:#fff;
+  text-decoration:none;
+}
+
+
+/* About Section Styles */
+.about {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 2rem;
+  line-height: 1.8;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #f5f5f5;
+  text-align: center;
+  margin: -25px auto 4rem auto;
+}
+
+.about h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #00aaff;
+  text-align: center;
+  position: relative;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  
+}
+
+/* Card Style */
+.card {
+ background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  color: #eee;
+  border-radius: 16px;
+  padding: 25px;
+  width: 42%;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  /* box-shadow: 0 8px 20px rgba(0, 170, 255, 0.25); */
+  border-color: #00aaff;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  
+}
+
+.card-title span {
+  color: #00aaff; /* highlight only the text */
+}
+
+.card h3 {
+  margin: 0;
+  color: #00aaff;
+  font-size: 1.3rem;
+}
+
+.card-desc {
+  margin-top: 12px;
+  font-size: 15px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.experience {
+  padding: 1rem 1rem;
+  max-width: 900px;
+  margin: -80px auto 4rem auto;
+  text-align: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #ffffff;
+}
+
+.experience h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #0099ff;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  padding-left: 20px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #00f, #0ff);
+  border-radius: 2px;
+}
+
+.exp-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  color: #eee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.exp-card:hover {
+  transform: translateY(-6px);
+ border-color: #00aaff;
+}
+
+.exp-header {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.exp-header h3 {
+  font-size: 1.3rem;
+  color: #00aaff;
+}
+
+.exp-company, .exp-date {
+  display: block;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.exp-role {
+  font-style: italic;
+  margin: 0.5rem 0 1rem;
+  color: #ccc;
+  text-align: left;
+}
+
+.exp-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.exp-details li {
+  margin-bottom: 0.6rem;
+  color: #eee;
+  font-size: 0.95rem;
+}
+
+.skills {
+  text-align: center;
+  padding: 50px 20px;
+  margin: -100px auto 4rem auto;
+  font-family: "Segoe UI", Arial, sans-serif;
+  
+}
+
+.skills h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* exactly 4 per row */
+  gap: 20px; /* spacing between items */
+  justify-items: center; /* center each item */
+  justify-content: center; /* center the whole grid */
+  max-width: 100px; /* keeps it centered on the page */
+  margin: 20px auto 0 auto; /* ⬅ top margin 20px, auto for left/right */
+}
+
+
+
+.skill-card {
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  width: 180px;
+  text-align: center;  
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  color: #eee;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: #00aaff;
+}
+
+.skill-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.skill-card h3 {
+  font-size: 1.2em;
+  margin: 10px 0 5px;
+   /* color: #ffffff; */
+}
+
+.skill-card p {
+  font-size: 0.9em;
+  color: #ffffff;
+}
+
+/* Gallery styling */
+.gallery {
+  padding: 50px 20px;
+  text-align: center;
+
+}
+
+.gallery h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+margin: -100px auto 4rem auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* exactly 4 per row */
+  gap: 10px; /* spacing between items */
+  justify-items: center; /* center each item */
+  justify-content: center; /* center the whole grid */
+  max-width: 1100px; /* keeps it centered on the page */
+  margin: 0 auto; /* centers horizontally */
+margin: -30px auto 4rem auto;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px; /* fixed height for consistency */
+  object-fit: cover; /* keeps aspect ratio, crops if needed */
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+ border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+   border: 1px solid #00aaff;
+}
+
+/* Lightbox styling */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.9);
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+.projects {
+  text-align: center;
+  padding: 40px 20px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: -120px auto 4rem auto;
+}
+
+.projects h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  margin: 30px auto 4rem auto;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  color: #eee;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+    border: 1px solid #00aaff;
+}
+
+.project-card video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+    border-radius: 8px;
+}
+.view-more-btn {
+  display:inline-block;
+  margin-top:1rem;
+  padding:0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  color:#fff;
+  text-decoration:none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  margin: -180px auto 4rem auto;
+}
+
+.view-more-btn:hover {
+    border: 1px solid #00aaff;
+     background:#00aaff;
+}
+.education {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  color: #eee;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+ font-family: "Segoe UI", Arial, sans-serif;
+  margin: -120px auto 4rem auto;
+}
+
+.education:hover{
+    border: 1px solid #00aaff;
+}
+
+.edu-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.edu-left, .edu-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.education h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #00aaff;
+  border-left: 5px solid #0078ff;
+  padding-left: 10px;
+}
+
+.edu-item, .course-item {
+  margin-bottom: 25px;
+}
+
+.edu-item h3, .course-item h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.edu-item p, .course-item p {
+  font-size: 15px;
+  font-style: italic;
+  margin: 0.5rem 0 1rem;
+  color: #ccc;
+  margin-left: 10px;
+}
+
+.edu-item .year {
+  /* display: inline-block; */
+  color: #00aaff;                /* dark text */
+  font-size: 14px;
+  font-weight: 500;
+  padding: 3px 8px;
+}
+
+
+
+/* Button */
+.cert-btn {
+            background: linear-gradient(45deg, #357cee, #5dc1ff);
+            border: none;
+            color: #fff;
+            font-weight: 700;
+            padding: 10px 18px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+}
+
+.cert-btn:hover {
+            transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.footer-unique {
+  /* background: linear-gradient(135deg, #1e3c72, #2a5298, #00c6ff, #0072ff); */
+    background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  color: #eee;
+  padding: 30px 60px;
+  color: #f0f0f0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* responsive */
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-left h3 {
+  font-size: 1.3rem;
+  color: #00aaff;
+}
+
+.profile-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+ border: 1px solid rgba(255, 255, 255, 0.08);
+  object-fit: cover;
+  /* box-shadow: 0 0 15px #00aaff; */
+}
+.footer-unique{
+      font-family: "Segoe UI", Arial, sans-serif;
+}
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.footer-link {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.footer-link i {
+  margin-right: 8px;
+  color: #00aaff;
+}
+
+.footer-link:hover {
+  color: #00aaff;
+}
+.hire-btn {
+  background: #25D366; /* WhatsApp green */
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.footer-unique {
+background: linear-gradient(135deg, #0a0a0f, #101a2b, #0d0d1f, #1a2a40);
+  padding: 40px 20px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle glow effect */
+.footer-unique::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #00aaff77, transparent 70%);
+  animation: rotateGlow 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1; /* Keeps content above glow */
+}
+
+.profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #00aaff;
+  transition: transform 0.3s ease;
+}
+.profile-img:hover {
+  transform: scale(1.1);
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* CSS for fixed left side button */
+/* Minimal fixed left resume button */
+/* Minimal fixed bottom-left resume button */
+.resume-btn {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+    color: #fff;
+    font-size: 1.2rem;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* Hover effect: subtle scale & shadow */
+.resume-btn:hover {
+    border: 1px solid #00aaff;
+    transform: scale(1.1);
+}
+
+/* Tooltip */
+.resume-btn::after {
+    content: "Download Resume";
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-10px);
+background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+    color: #fff;
+    font-size: 0.85rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+/* Tooltip appears on hover with smooth slide */
+.resume-btn:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0); /* slide to final position */
+}
+
+
+
+
+/* --- Mobile responsiveness with exactly 3 skills per row --- */
+@media (max-width: 768px) {
+    .overlay {
+        text-align: center;
+    }
+    .overlay h1 { font-size: 2rem; margin-bottom: 10px; }
+    .overlay p { font-size: 1rem; }
+
+    /* Card layout */
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .card { width: 95%; max-width: 400px; margin: 0 auto; }
+
+    /* Skills grid: 3 per row */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* exactly 3 per row */
+        justify-items: center;
+        gap: 15px;
+        width: 100%;
+        max-width: 360px; /* centers the 3 items */
+        margin: 0 auto;
+    }
+    .skill-card {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* Gallery grid */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        gap: 10px;
+    }
+
+    /* Projects grid */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 20px;
+    }
+
+    /* Education */
+    .edu-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .edu-left, .edu-right {
+        min-width: auto;
+        text-align: center;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        align-items: center;
+    }
+    .footer-left, .footer-right {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay h1 { font-size: 1.6rem; }
+    .overlay p { font-size: 0.85rem; }
+
+    /* Skills grid: still 3 per row, cards shrink */
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .skill-card { padding: 8px; }
+    
+    /* Gallery grid */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .card { max-width: 350px; }
+}
+

@@ -61,7 +61,7 @@ body {
   left:0;
   width:100%;
   height:100%;
-  background: url('assets/images/empty-dark-room-modern-futuristic-sci-fi-background-3d-illustration.jpg') center/cover no-repeat;
+  background: url('assets/images/empty-dark-room-modern-futuristic-sci-fi-background-3d-illustration.png') center/cover no-repeat;
   filter: brightness(0.6); /* Darken background for overlay */
 }
 .overlay {
